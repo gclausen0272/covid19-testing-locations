@@ -217,21 +217,30 @@ public class LocationFinderMain {
 		double lng = scnnr.nextDouble();
 		System.out.println("give lat");
 		double lat = scnnr.nextDouble();
-		UserInfo info = new UserInfo(lat, lng, collectData2.remove());
+		System.out.println("zip code?");
+		int zip = scnnr.nextInt();
+		TestingLocation first =  collectData2.remove();
+		
+		UserInfo info = new UserInfo(lat, lng, first, first, zip);
 		info.setDistance(LocationUtils.getDistance(info.getClosestLocation(), info));
+		info.setZipDist(LocationUtils.getZipDistance(info.getClosestLocation(), info));
 		int x = collectData2.size();
+		
 		double tempDist;
-
+		int tempZipDist;
+		
 		while (collectData2.size() > 0) {
 			TestingLocation test = collectData2.remove();
 			tempDist = LocationUtils.getDistance(test, info);
 			LocationUtils.reset(tempDist, info, test);
-			// calls the to string method from implicitly from the baby class which prints
-			// it in the desired way
-//			System.out.println(collectData2.remove().toString());
+
+			tempZipDist = LocationUtils.getZipDistance(test, info);
+			info.setClosestLocationZip(LocationUtils.compareZip(test, info, tempZipDist));
+			
 			info.setClosestLocation(LocationUtils.reset(tempDist, info, test));
 		}
 		System.out.println("hello user, the closest testing location to you is " + info.getClosestLocation());
+		System.out.println("the closest location by zip code is " +info.getClosestLocationZip());
 		System.out.println(x);
 		scnnr.close();
 
