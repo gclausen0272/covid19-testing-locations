@@ -19,21 +19,7 @@ import java.io.*;
  */
 public class LocationFinderMain {
 
-	static final int NUMBER_OUT_OF_REST = 3000;
 
-	// these are globally declared and accessed through out, they are objects that
-	// signify the superlatives
-
-	// FIXME change x thats not a variable name
-	/**
-	 * this creates the file and returns it as a string with all the values in it
-	 * 
-	 * @param x
-	 * @param nameToFind
-	 * @param sex
-	 * @return a string of the values
-	 * @throws FileNotFoundException
-	 */
 	public static Queue<TestingLocation> fileCreator(String fileName) throws FileNotFoundException {
 
 		// this creates the file that will be used
@@ -106,16 +92,7 @@ public class LocationFinderMain {
 
 	}
 
-	/**
-	 * this function takes takes the values in file's raw string data and stores it
-	 * as a queue of babies
-	 * 
-	 * @param nameOfInterest
-	 * @param sex
-	 * @param collectData2
-	 * @return a queue of babies
-	 * @throws FileNotFoundException
-	 */
+
 	public static Queue<TestingLocation> createTestingCenterQueue(Queue<TestingLocation> collectData2)
 			throws FileNotFoundException {
 

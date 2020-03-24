@@ -10,32 +10,6 @@
 ///FIXME if theres no one named the name 
 public class TestingLocation {
 
-//	String location_id;
-//	String isHidden;
-//	String isVerified;
-//	String screening;
-//	String collecting;
-//	String locationName;
-//	String street;
-//	String locality;
-//	String region;
-//	String postalCode;
-//	String lat;
-//	String lng;
-//	String type;
-//	String phone;
-//	String url;
-//	String operation;
-//	String hours;
-//	String thirdPartyTesting;
-//	String selectiveTesting;
-//	String appointment;
-//	String phoneAppointments;
-//	String urlAppoint;
-//	String specCrit;
-//	String aditionInfo;
-//	String ready;
-//	String localAd;
 
 	private String location_id;
 	private String isHidden;
